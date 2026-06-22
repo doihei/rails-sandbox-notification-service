@@ -1,3 +1,9 @@
+---
+paths:
+  - "app/services/**/*.rb"
+  - "spec/services/**/*.rb"
+---
+
 ## Service Object の規約
 
 ### 基本方針

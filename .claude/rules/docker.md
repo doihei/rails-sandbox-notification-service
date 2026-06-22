@@ -1,3 +1,11 @@
+---
+paths:
+  - "Dockerfile*"
+  - "docker/**/*"
+  - "docker-compose.yml"
+  - ".env*"
+---
+
 ## Docker 構成
 
 ### サービス構成

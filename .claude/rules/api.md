@@ -1,3 +1,10 @@
+---
+paths:
+  - "app/controllers/**/*.rb"
+  - "spec/requests/**/*.rb"
+  - "config/routes.rb"
+---
+
 ## REST API の実装規約
 
 ### 認証
@@ -10,7 +17,7 @@
 # ApplicationController に実装済み
 def authenticate_service!
   token = request.headers["Authorization"]&.delete_prefix("Bearer ")
-  unless token == ENV.fetch("INTER_SERVICE_SECRET", "dev-secret")
+  unless token == ENV.fetch("INTER_SERVICE_SECRET")
     render json: { error: "Unauthorized" }, status: :unauthorized
   end
 end
