@@ -3,7 +3,7 @@ class ApplicationController < ActionController::API
 
   def authenticate_service!
     token = request.headers["Authorization"]&.delete_prefix("Bearer ")
-    unless token == ENV.fetch("INTER_SERVICE_SECRET", "dev-secret")
+    unless token == ENV.fetch("INTER_SERVICE_SECRET")
       render json: { error: "Unauthorized" }, status: :unauthorized
     end
   end
