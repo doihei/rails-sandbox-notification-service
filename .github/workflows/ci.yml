@@ -87,6 +87,7 @@ jobs:
         env:
           RAILS_ENV: test
           TEST_DATABASE_URL: postgres://postgres:postgres@localhost:5432/notification_test
+          INTER_SERVICE_SECRET: ci-secret
         run: |
           bin/rails db:test:prepare
           bundle exec rspec
