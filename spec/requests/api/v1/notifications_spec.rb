@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "Api::V1::Notifications", type: :request do
   let(:headers) do
     {
-      "Authorization" => "Bearer dev-secret",
+      "Authorization" => "Bearer #{ENV.fetch('INTER_SERVICE_SECRET')}",
       "Content-Type"  => "application/json"
     }
   end
