@@ -19,7 +19,9 @@ Rails 8.1 API-only + PostgreSQL の通知マイクロサービス。
 
 ```bash
 cp .env.example .env
-# .env を編集して各値を設定する（開発環境はデフォルト値のままで動作する）
+# .env を編集して各値を設定する
+# INTER_SERVICE_SECRET は必ず設定すること（未設定だと起動時に KeyError でクラッシュする）
+# ローカル開発では backend 側の .env と同じ値（例: dev-secret）を設定する
 ```
 
 ### 2. コンテナを起動する
