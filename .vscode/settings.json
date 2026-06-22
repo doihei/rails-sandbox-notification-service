@@ -1,0 +1,41 @@
+{
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.eol": "\n",
+  "editor.rulers": [80, 120],
+  "editor.formatOnSave": true,
+
+  "[ruby]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+
+  // Ruby LSP（RuboCop フォーマット + inlay hint）
+  "rubyLsp.formatter": "rubocop",
+  "rubyLsp.enabledFeatures": {
+    "inlayHint": true
+  },
+
+  // エクスプローラーから除外
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/tmp": true,
+    "**/log": true,
+    "**/vendor/bundle": true,
+    "**/vendor/cache": true
+  },
+
+  // 検索から除外
+  "search.exclude": {
+    "**/tmp": true,
+    "**/log": true,
+    "**/vendor": true,
+    "**/*.lock": true
+  },
+
+  "gitlens.codeLens.enabled": true
+}

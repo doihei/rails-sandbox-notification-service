@@ -1,0 +1,96 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "RSpec: Run all specs",
+      "type": "shell",
+      "command": "docker compose exec notification-api bundle exec rspec",
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "RSpec: Run current file",
+      "type": "shell",
+      "command": "docker compose exec notification-api bundle exec rspec ${relativeFile}",
+      "group": "test",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Rails: db:migrate",
+      "type": "shell",
+      "command": "docker compose exec notification-api bin/rails db:migrate",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Rails: db:rollback",
+      "type": "shell",
+      "command": "docker compose exec notification-api bin/rails db:rollback",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Rails: routes",
+      "type": "shell",
+      "command": "docker compose exec notification-api bin/rails routes",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Rails: console",
+      "type": "shell",
+      "command": "docker compose exec -it notification-api bin/rails console",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "RuboCop: Run",
+      "type": "shell",
+      "command": "docker compose exec notification-api bundle exec rubocop",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "RuboCop: Autocorrect",
+      "type": "shell",
+      "command": "docker compose exec notification-api bundle exec rubocop -a",
+      "group": "build",
+      "presentation": {
+        "reveal": "always",
+        "panel": "shared"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

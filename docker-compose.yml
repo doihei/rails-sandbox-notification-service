@@ -1,0 +1,24 @@
+services:
+  notification-db:
+    image: postgres:16
+    env_file: .env
+    ports:
+      - "5433:5432"   # rails-sandbox の 5432 と衝突しないようオフセット
+
+  notification-api:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile.dev
+    volumes:
+      - .:/app
+      - bundle_cache:/usr/local/bundle
+    ports:
+      - "3001:3001"
+    env_file: .env
+    environment:
+      RAILS_ENV: development
+    depends_on:
+      - notification-db
+
+volumes:
+  bundle_cache:

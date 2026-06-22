@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    // Ruby LSP（フォーマット・IntelliSense・定義ジャンプ・RuboCop 連携）
+    "Shopify.ruby-lsp",
+    // VSCode テストエクスプローラー対応アダプター
+    "ms-vscode.test-adapter-converter",
+    // GitLens（コミット履歴・blame・コードレンズ）
+    "eamodio.gitlens"
+  ]
+}
